@@ -18,7 +18,7 @@ class PhpSession
 
 	private function startSession()
 	{
-		if ( ! $this->isStarted())
+		if ( ! app()->runningInConsole() && ! $this->isStarted() )
 		{
 			session_start();
 		}
